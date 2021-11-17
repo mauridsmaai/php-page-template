@@ -1,13 +1,39 @@
 <?php
 
+    // header
     include('partials/header.php');
+
+    // navigation
     include('partials/nav.php');
     
+    // pages
+    
+    if(isset($_GET['page']) && $_GET['page'] == 'home') {
+        include('contact.php');
+    } 
+    
+    elseif(isset($_GET['page']) && $_GET['page'] == 'profile') {
+        include('gallery.php');
+    } 
 
+    elseif(isset($_GET['page']) && $_GET['page'] == 'gallery') {
+        include('home.php');
+    } 
 
-    // main content
-    echo "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae doloremque voluptatibus ipsam, sint quisquam expedita rerum illum deserunt esse fuga ad voluptas placeat molestias distinctio porro ex officia iure.</p>";
+    elseif(isset($_GET['page']) && $_GET['page'] == 'shop') {
+        include('profile.php');
+    }
 
-    include('partials/footer.php');
+    elseif(isset($_GET['page']) && $_GET['page'] == 'contact') {
+        include('shop.php');
+    }
+    
+    
+    else {
+        echo "<p style='color:red;'>Page not found!</p>";
+    }
+    
+    // footer
+    include('partials/footer.php');    
+
 ?>
-
